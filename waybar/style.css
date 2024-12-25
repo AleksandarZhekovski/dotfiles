@@ -4,6 +4,7 @@
     border-radius: 0;
     font-family: "Hack Nerd Font Regular";
     min-height: 0;
+    font-size: 10px;
 }
 
 window#waybar {
@@ -18,7 +19,6 @@ window#waybar {
 
 }
 #window {
-  font-size:12px;
   background: @module_background;
 
   min-width: 50px;
@@ -39,7 +39,6 @@ window#waybar {
 /*Workspaces*/
 
 #workspaces {
-  font-size:10px;
   background: @module_background;
 
   min-width: 50px;
@@ -79,8 +78,7 @@ window#waybar {
 
 }
 
-#clock, #cpu, #memory, #network, #pulseaudio, #custom-pulseaudio-cycle, #tray {
-  font-size:12px;
+#clock, #cpu, #memory, #network, #pulseaudio, #custom-pulseaudio-cycle, #tray, #battery {
     background: #202020;
     margin: 5 5px;
     padding: 0 7px;
@@ -102,6 +100,11 @@ window#waybar {
 
 #battery.charging {
 }
+
+#battery.good {
+  background-color: green;
+}
+
 
 @keyframes blink {
     to {

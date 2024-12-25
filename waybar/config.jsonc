@@ -23,6 +23,7 @@
     "network",
     "cpu",
     "memory",
+    "battery",
     "clock"
   ],
   //
@@ -45,7 +46,7 @@
   "clock": {
     "format": "{:%Y-%m-%d %H:%M}",
     "format-alt": "{:%Y-%m-%d}",
-    "timezone": "Europe/Sofia"
+    "timezone": "Europe/Rome"
   },
   "cpu": {
     "format": "{usage}%"
@@ -56,7 +57,7 @@
   "battery": {
     "bat": "BAT0",
     "states": {
-      // "good": 95,
+      "high": 95,
       "warning": 30,
       "critical": 15
     },
