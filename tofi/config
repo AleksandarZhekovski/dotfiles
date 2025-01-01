@@ -13,10 +13,10 @@
 	# characters not in the chosen font will fail to render.
 	#
 	# Otherwise, fonts are interpreted in Pango format.
-	font = "Sans"
+	font = "Hack"
 
 	# Point size of text.
-	font-size = 24
+	font-size = 20
 
 	# Comma separated list of OpenType font feature settings to apply,
 	# if supported by the chosen font. The format is similar to the CSS
@@ -152,7 +152,7 @@
 
 	# Maximum number of results to display.
 	# If 0, tofi will draw as many results as it can fit in the window.
-	num-results = 0
+	num-results = 10
 
 	# Spacing between results in pixels. Can be negative.
 	result-spacing = 0
@@ -256,7 +256,7 @@
 	# algorithm.
 	#
 	# Supported values: normal, prefix, fuzzy
-	matching-algorithm = fuzzy
+	matching-algorithm = prefix
 
 	# If true, require a match to allow a selection to be made. If false,
 	# making a selection with no matches will print input to stdout.
@@ -266,7 +266,7 @@
 	# If true, automatically accept a result if it is the only one
 	# remaining. If there's only one result on startup, window creation is
 	# skipped altogether.
-	auto-accept-single = false
+	auto-accept-single = true
 
 	# If true, typed input will be hidden, and what is displayed (if
 	# anything) is determined by the hidden-character option.
