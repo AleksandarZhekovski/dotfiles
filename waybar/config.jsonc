@@ -23,6 +23,7 @@
     "network",
     "cpu",
     "memory",
+    "backlight",
     "battery",
     "clock"
   ],
@@ -46,7 +47,7 @@
   "clock": {
     "format": "{:%Y-%m-%d %H:%M}",
     "format-alt": "{:%Y-%m-%d}",
-    "timezone": "Europe/Rome"
+    "timezone": "Europe/Sofia"
   },
   "cpu": {
     "format": "{usage}%"

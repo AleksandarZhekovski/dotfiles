@@ -78,7 +78,7 @@ window#waybar {
 
 }
 
-#clock, #cpu, #memory, #network, #pulseaudio, #custom-pulseaudio-cycle, #tray, #battery {
+#backlight, #clock, #cpu, #memory, #network, #pulseaudio, #custom-pulseaudio-cycle, #tray, #battery {
     background: #202020;
     margin: 5 5px;
     padding: 0 7px;
