@@ -45,15 +45,18 @@
     "spacing": 10
   },
   "clock": {
-    "format": "{:%Y-%m-%d %H:%M}",
-    "format-alt": "{:%Y-%m-%d}",
+    "format": "{:%H : %M %d-%m-%Y}",
+    "format-alt": "{:%H :%M}",
     "timezone": "Europe/Sofia"
   },
   "cpu": {
-    "format": "{usage}%"
+    "format": "C{usage}%"
   },
   "memory": {
-    "format": "{}%"
+    "format": "M{}%"
+  },
+  "backlight": {
+    "format": "B{}%"
   },
   "battery": {
     "bat": "BAT0",
@@ -75,8 +78,8 @@
   },
   "network": {
     // "interface": "wlp2s0", // (Optional) To force the use of this interface
-    "format-wifi": "{essid} ({signalStrength}%)",
-    "format-ethernet": "",
+    "format-wifi": "{essid} {signalStrength}% {ipaddr} {bssid}",
+    "format-ethernet": "{ipaddr} {bssid}",
     "format-disconnected": "Disconnected"
   },
   "pulseaudio": {
