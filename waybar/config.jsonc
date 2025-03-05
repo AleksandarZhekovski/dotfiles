@@ -20,6 +20,7 @@
     "tray",
     "custom/pulseaudio-cycle",
     "pulseaudio",
+    "hyprland/language",
     "network",
     "cpu",
     "memory",
