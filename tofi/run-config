@@ -102,7 +102,7 @@
 	# alternate-result-background-corner-radius = 0
 
 	# Selection text
-	selection-color = FF9900
+	selection-color = 33ccff
 	selection-background = #00000000
 	selection-background-padding = 0
 	selection-background-corner-radius = 0
@@ -142,7 +142,7 @@
 ### Text layout
 #
 	# Prompt to display.
-	prompt-text = "ERROR: "
+	prompt-text = "cmd: "
 
 	# Extra horizontal padding between prompt and input.
 	prompt-padding = 0
@@ -266,7 +266,7 @@
 	# If true, automatically accept a result if it is the only one
 	# remaining. If there's only one result on startup, window creation is
 	# skipped altogether.
-	auto-accept-single = true
+	auto-accept-single = false
 
 	# If true, typed input will be hidden, and what is displayed (if
 	# anything) is determined by the hidden-character option.

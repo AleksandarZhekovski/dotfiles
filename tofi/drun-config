@@ -142,7 +142,7 @@
 ### Text layout
 #
 	# Prompt to display.
-	prompt-text = "ERROR: "
+	prompt-text = "app: "
 
 	# Extra horizontal padding between prompt and input.
 	prompt-padding = 0
