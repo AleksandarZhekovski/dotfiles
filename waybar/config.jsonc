@@ -45,11 +45,16 @@
     // "icon-size": 21,
     "spacing": 10
   },
-  "clock": {
-    "format": "{:%H : %M %d-%m-%Y}",
-    "format-alt": "{:%H :%M}",
-    "timezone": "Europe/Sofia"
-  },
+  //  "clock": {
+  //<<<<<<< HEAD
+  //    "format": "{:%Y-%m-%d %H:%M}",
+  //    "format-alt": "{:%Y-%m-%d}",
+  //=======
+  //    "format": "{:%H : %M %d-%m-%Y}",
+  //    "format-alt": "{:%H :%M}",
+  //>>>>>>> refs/remotes/origin/main
+  //   "timezone": "Europe/Sofia"
+  //  },
   "cpu": {
     "format": "C{usage}%"
   },
