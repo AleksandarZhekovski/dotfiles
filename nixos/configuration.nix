@@ -54,6 +54,8 @@
   # hardware.pulseaudio.enable = true;
   # OR
   boot.extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
 
   services = { 
     blueman.enable = true;
