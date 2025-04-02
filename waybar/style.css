@@ -8,10 +8,10 @@
 }
 
 window#waybar {
-    background: rgba(20,20,20,0.5);/*rgba(25,25,25,0.9); */
+    background: rgba(20,20,20,0);/*rgba(25,25,25,0.9); */
     opacity: 1;
 
-    border: 2px solid;
+    border: 0px solid;
     border-color: #707070;
     border-radius: 9px;
 

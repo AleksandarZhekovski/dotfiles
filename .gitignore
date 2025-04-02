@@ -11,3 +11,4 @@
 dconf/
 obsidian/
 mimeapps.list
+nixos/hardware-configuration.nix

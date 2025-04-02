@@ -127,6 +127,7 @@
     wol
     btop
     wol
+    unzip
 
 
   
