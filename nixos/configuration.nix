@@ -53,6 +53,7 @@
   # Enable sound.
   # hardware.pulseaudio.enable = true;
   # OR
+  boot.extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
 
   services = { 
     blueman.enable = true;
