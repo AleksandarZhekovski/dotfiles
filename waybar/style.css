@@ -1,139 +1,50 @@
-@import 'colors.css';
+@import "colors.css";
 * {
-    border:none;
-    border-radius: 0;
-    font-family: "Hack Nerd Font Regular";
-    min-height: 0;
-    font-size: 10px;
+  border: none;
+  border-radius: 0;
+  font-family: "Hack Nerd Font Regular";
+  min-height: 0;
+  font-size: 10px;
 }
 
 window#waybar {
-    background: rgba(20,20,20,0);/*rgba(25,25,25,0.9); */
-    opacity: 1;
+  background: rgba(20, 20, 20, 0); /*rgba(25,25,25,0.9); */
+  opacity: 1;
 
-    border: 0px solid;
-    border-color: #707070;
-    border-radius: 9px;
-
-    color: white;
-
-}
-#window {
-  background: @module_background;
-
-  min-width: 50px;
-
-  border: 2px solid;
-  border-color: @module_border;
+  border: 0px solid;
+  border-color: #707070;
   border-radius: 9px;
 
-  padding-left:6px;
-  padding-right:6px;
-
-  margin-left: 6;
-  margin-top:5;
-  margin-bottom:5;
-
-  }
-
-/*Workspaces*/
+  color: white;
+}
 
 #workspaces {
-  background: @module_background;
-
-  min-width: 50px;
-
-  border: 2px solid;
-  border-color: @module_border;
-  border-radius: 9px;
-
-  padding-left:6px;
-  padding-right:6px;
-
-  margin-left: 6;
-  margin-top:5;
-  margin-bottom:5;
+  margin: 0 1em;
+  border-top: 0px solid #707070;
 }
-#workspaces button { 
-    background: #202020;
-    color: white;
 
-    border: 0px solid;
-    border-color: @module_border;
-    border-radius: 9px;
-
-    margin-top:0;
-    margin-bottom:0;
-
-    font-size: 9;
+#workspaces button {
+  margin: 0 0.5em;
+  border-top: 5px solid #707070;
 }
-#workspaces button.active {
-  border: 2px solid @workspace_button_border;
-  border-radius: 9px;
-  background: @module_background;
-}
+
 #workspaces button.empty {
-  border-radius: 9;
-  background: black;
-
+  border-top: 0px;
 }
 
-#language, #backlight, #clock, #cpu, #memory, #network, #pulseaudio, #custom-pulseaudio-cycle, #tray, #battery {
-    background: #202020;
-    margin: 5 5px;
-    padding: 0 7px;
-    /*padding: 4px;*/
-    border: 2px solid @module_border;
-    border-radius: 6px;
+#workspaces button.active {
+  border-top: 0.5em solid green;
 }
 
-#clock {
-    font-weight: bold;
+/* Right Modules */
+.modules-right {
 }
 
-#battery {
+#clock,
+#memory,
+#cpu,
+#network,
+#wireplumber {
+  margin: 0 0.5em;
+  background: transparent;
 }
-
-#battery icon {
-    color: red;
-}
-
-#battery.charging {
-}
-
-#battery.good {
-  background-color: green;
-}
-
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: black;
-    }
-}
-
-#battery.warning:not(.charging) {
-    color: white;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#cpu {
-}
-
-#memory {
-}
-
-#network {
-}
-
-#network.disconnected {
-    font-size:12px;
-    background: #f53c3c;
-}
-
-

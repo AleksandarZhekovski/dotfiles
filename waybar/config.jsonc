@@ -1,130 +1,101 @@
 {
-  //
-  //general setings
+  //### Barwide confings
   "layer": "top", // Waybar at top layer
+  //"output" : ""
   "position": "top", // Waybar at the bottom of your screen
-  "height": 26, // Waybar height
-  "margin-top": 2,
-  "margin-left": 20,
-  "margin-right": 20,
-  "spacing": 4,
-  //
-  //modules
-  "modules-left": [
-    "hyprland/window"
-  ],
-  "modules-center": [
-    "hyprland/workspaces"
-  ],
-  "modules-right": [
-    "tray",
-    "custom/pulseaudio-cycle",
-    "pulseaudio",
-    "hyprland/language",
-    "network",
-    "cpu",
-    "memory",
-    "backlight",
-    "battery",
-    "clock"
-  ],
-  //
-  //modules-right
-  "hyprland/window": {
-    //"height": 4
-  },
+
+  "height": 10, // Waybar height
+  //"width":
+
+  //"margin":
+  "margin-top": 0,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "spacing": 0,
+
+  //"name":
+  "mode": "overlay",
+  // Choose the order of the modules
+  "modules-left": ["tray", "custom/pulseaudio-cycle", "keyboard-state"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["wireplumber", "network", "cpu", "memory", "clock"],
+
+  // Workspaces
   "hyprland/workspaces": {
-    "format": " {name} ",
-    "format-icons": {},
+    "format": "",
+    "format-icons": {
+      //"1": "",
+      //"2": "",
+      //"3": "",
+      //"4": "",
+      //"5": "",
+      "active": "",
+      "default": "",
+    },
     "persistent-workspaces": {
-      "*": 8 // 5 workspaces by default on every monitor
-             //"HDMI-A-1": 3 // but only three on HDMI-A-1
-    }
+      "*": 8, // 5 workspaces by default on every monitor
+      //"HDMI-A-1": 3 // but only three on HDMI-A-1
+    },
   },
+
   "tray": {
     // "icon-size": 21,
-    "spacing": 10
+    "spacing": 10,
   },
-  //  "clock": {
-  //<<<<<<< HEAD
-  //    "format": "{:%Y-%m-%d %H:%M}",
-  //    "format-alt": "{:%Y-%m-%d}",
-  //=======
-  //    "format": "{:%H : %M %d-%m-%Y}",
-  //    "format-alt": "{:%H :%M}",
-  //>>>>>>> refs/remotes/origin/main
-  //   "timezone": "Europe/Sofia"
-  //  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%H:%M %Y-%m-%d}",
+  },
   "cpu": {
-    "format": "C{usage}%"
+    "format": "C-{usage}",
   },
   "memory": {
-    "format": "M{}%"
-  },
-  "backlight": {
-    "format": "B{}%"
+    "format": "M-{}",
   },
   "battery": {
     "bat": "BAT0",
     "states": {
-      "high": 95,
+      // "good": 95,
       "warning": 30,
-      "critical": 15
+      "critical": 15,
     },
     "format": "{capacity}% {icon}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+    "format-icons": ["", "", "", "", ""],
   },
   "network": {
     // "interface": "wlp2s0", // (Optional) To force the use of this interface
-    "format-wifi": "{essid} {signalStrength}% {ipaddr} {bssid}",
-    "format-ethernet": "{ipaddr} {bssid}",
-    "format-disconnected": "Disconnected"
+    "format-wifi": "{essid} ({signalStrength}%)",
+    "format-ethernet": "",
+    "format-disconnected": "Disconnected",
   },
-  "pulseaudio": {
+  "wireplumber": {
     //"scroll-step": 1,
-    "format": "{volume}% {icon}",
+    "format": "V-{volume}",
     "format-bluetooth": "{volume}% {icon}",
     "format-muted": "",
-    "format-icons": {
-      "headphones": "",
-      "handsfree": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": [
-        "",
-        ""
-      ]
-    },
-    "on-click": "pavucontrol"
   },
   "custom/pulseaudio-cycle": {
-    "return-type": "text",
+    "return-type": "json",
     "exec-on-event": true,
-    "interval": "0",
-    "exec": "echo Switch", //"pactl --format=json list sinks | jq -cM --unbuffered \"map(select(.name == \\\"$(pactl get-default-sink)\\\"))[0].properties | [.\\\"media.name\\\",.\\\"alsa.name\\\",.\\\"node.nick\\\",.\\\"alsa.long_card_name\\\"] | map(select(length>0))[0] | {text:.}\"",
-    "exec-if": "sleep 0.3", // Give enough time for `pactl get-default-sink` to update
-    "on-click": "pactl --format=json list sinks short | jq -cM --unbuffered \"[.[].name] | .[((index(\\\"$(pactl get-default-sink)\\\")+1)%length)]\" | xargs pactl set-default-sink"
+    "interval": "5",
+    "exec": "pactl --format=json list sinks | jq -cM --unbuffered \"map(select(.name == \\\"$(pactl get-default-sink)\\\"))[0].properties | [.\\\"media.name\\\",.\\\"alsa.name\\\",.\\\"node.nick\\\",.\\\"alsa.long_card_name\\\"] | map(select(length>0))[0] | {text:.}\"",
+    "exec-if": "sleep 0.1", // Give enough time for `pactl get-default-sink` to update
+    "on-click": "pactl --format=json list sinks short | jq -cM --unbuffered \"[.[].name] | .[((index(\\\"$(pactl get-default-sink)\\\")+1)%length)]\" | xargs pactl set-default-sink",
   },
+
   "keyboard-state": {
     "numlock": true,
     "capslock": true,
     "format": {
       "numlock": "N {icon}",
-      "capslock": "C {icon}"
+      "capslock": "C {icon}",
     },
     "format-icons": {
       "locked": "",
-      "unlocked": ""
-    }
-  }
+      "unlocked": "",
+    },
+  },
 }
