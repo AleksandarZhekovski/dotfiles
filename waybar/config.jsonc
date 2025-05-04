@@ -4,7 +4,7 @@
   //"output" : ""
   "position": "top", // Waybar at the bottom of your screen
 
-  "height": 10, // Waybar height
+  "height": 0, // Waybar height
   //"width":
 
   //"margin":
@@ -14,8 +14,11 @@
 
   "spacing": 0,
 
-  //"name":
-  "mode": "overlay",
+  "passthrough": false,
+
+  "exclusive": false,
+
+  //"mode": "dock",
   // Choose the order of the modules
   "modules-left": ["tray", "custom/pulseaudio-cycle", "keyboard-state"],
   "modules-center": ["hyprland/workspaces"],
